@@ -1,4 +1,6 @@
 // @nebulaai/core - Utility function
+
+import type { IndustryType } from './types';
 import { ValidationError } from './errors';
 
 export function getRandomElement<T>(array: T[]): T {
