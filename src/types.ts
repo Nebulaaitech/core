@@ -79,3 +79,10 @@ export type GeneratorFunction<T> = (
   options?: GenerationOptions
 ) => T[];
 export type AnalyzerFunction<T> = (input: string) => AsyncResult<T>;
+
+export class ValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ValidationError';
+  }
+}
