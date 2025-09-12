@@ -1,4 +1,4 @@
-// @nebulaai/core - Utility function
+// @nebulaai/core - Utility functions
 
 import type { IndustryType } from './types';
 import { ValidationError } from './errors';
@@ -69,27 +69,27 @@ export function formatPercentage(value: number, decimals: number = 1): string {
 
 export class RateLimiter {
   private requests: number[] = [];
-  
+
   constructor(
     private maxRequests: number,
     private windowMs: number
   ) {}
-  
+
   canMakeRequest(): boolean {
     const now = Date.now();
     this.requests = this.requests.filter(time => now - time < this.windowMs);
-    
+
     if (this.requests.length < this.maxRequests) {
       this.requests.push(now);
       return true;
     }
-    
+
     return false;
   }
-  
+
   getTimeUntilNextRequest(): number {
     if (this.requests.length < this.maxRequests) return 0;
-    
+
     const oldestRequest = Math.min(...this.requests);
     return this.windowMs - (Date.now() - oldestRequest);
   }
