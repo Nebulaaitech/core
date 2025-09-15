@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.3-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Bundle Size](https://img.shields.io/badge/size-12kb-brightgreen)
